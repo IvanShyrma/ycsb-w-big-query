@@ -19,6 +19,7 @@ package com.yahoo.ycsb;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
 /**
@@ -81,10 +82,10 @@ public abstract class ByteIterator implements Iterator<Byte> {
   public void reset() {
     throw new UnsupportedOperationException();
   }
-  
+
   /** Consumes remaining contents of this object, and returns them as a string. */
   public String toString() {
-    Charset cset = Charset.forName("UTF-8");
+    Charset cset = StandardCharsets.UTF_8;
     CharBuffer cb = cset.decode(ByteBuffer.wrap(this.toArray()));
     return cb.toString();
   }

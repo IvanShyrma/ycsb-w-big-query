@@ -915,7 +915,7 @@ public final class Client {
     BigQueryConfiguration bigQueryConfiguration = new BigQueryConfiguration(projectId, dataSetName,
         tableName, pathToKey, statModel);
 
-    boolean status = Boolean.valueOf(props.getProperty(STATUS_PROPERTY, String.valueOf(false)));
+    boolean status = true; //Boolean.valueOf(props.getProperty(STATUS_PROPERTY, String.valueOf(false)));
     String label = props.getProperty(LABEL_PROPERTY, "");
 
     long maxExecutionTime = Integer.parseInt(props.getProperty(MAX_EXECUTION_TIME, "0"));
@@ -961,9 +961,11 @@ public final class Client {
       String statsExportFile = props.getProperty(EXPORT_STATS_TO_FILE, DEFAULT_EXPORT_STATS_TO_FILE);
 
       if (bigQueryConfiguration.isPropertyCorrect()) {
+        System.err.println("-------bigQueryConfiguration.isPropertyCorrect()");
         statusthread = new StatusThread(completeLatch, clients, label, standardstatus, statusIntervalSeconds,
             trackJVMStats, statsExportFile, threadcount, new BigQueryApi(bigQueryConfiguration));
       } else {
+        System.err.println("-------Not bigQueryConfiguration.isPropertyCorrect()");
         statusthread = new StatusThread(completeLatch, clients, label, standardstatus, statusIntervalSeconds,
             trackJVMStats, statsExportFile, threadcount);
       }
@@ -1029,6 +1031,7 @@ public final class Client {
         workload.cleanup();
       }
     } catch (WorkloadException e) {
+      System.err.println(e.getMessage());
       e.printStackTrace();
       e.printStackTrace(System.out);
       System.exit(0);

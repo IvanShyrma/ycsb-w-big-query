@@ -63,6 +63,7 @@ DATABASES = {
     "azuretablestorage" : "com.yahoo.ycsb.db.azuretablestorage.AzureClient",
     "basic"        : "com.yahoo.ycsb.BasicDB",
     "basicts"      : "com.yahoo.ycsb.BasicTSDB",
+    "azurecosmos"     : "site.ycsb.db.AzureCosmosClientExtension",
     "cassandra-cql": "com.yahoo.ycsb.db.CassandraCQLClientExtension",
     "cassandra2-cql": "com.yahoo.ycsb.db.CassandraCQLClientExtension",
     "cloudspanner" : "com.yahoo.ycsb.db.cloudspanner.CloudSpannerClient",

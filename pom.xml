@@ -78,6 +78,7 @@ LICENSE file.
     <arangodb.version>2.7.3</arangodb.version>
     <arangodb3.version>4.1.7</arangodb3.version>
     <asynchbase.version>1.7.1</asynchbase.version>
+    <azurecosmos.version>4.8.0</azurecosmos.version>
     <azuredocumentdb.version>1.8.1</azuredocumentdb.version>
     <azurestorage.version>4.0.0</azurestorage.version>
     <cassandra.cql.version>3.0.0</cassandra.cql.version>
@@ -125,13 +126,14 @@ LICENSE file.
     <module>arangodb</module>
     <module>arangodb3</module>
     <module>asynchbase</module>
-    <module>azuredocumentdb</module>
-    <module>azuretablestorage</module>
+    <module>azurecosmos</module>
+<!--    <module>azuredocumentdb</module>
+    <module>azuretablestorage</module>-->
     <module>cassandra</module>
     <module>cloudspanner</module>
     <module>couchbase</module>
     <module>couchbase2</module>
-    <module>dynamodb</module>
+ <!--   <module>dynamodb</module>-->
     <module>elasticsearch</module>
     <module>elasticsearch5</module>
     <module>geode</module>
@@ -203,22 +205,6 @@ LICENSE file.
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>validate</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <configLocation>checkstyle.xml</configLocation>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
