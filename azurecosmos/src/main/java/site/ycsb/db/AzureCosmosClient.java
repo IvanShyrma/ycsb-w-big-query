@@ -92,7 +92,7 @@ public class AzureCosmosClient extends DB {
   private static boolean useUpsert;
   private static int maxDegreeOfParallelism;
   private static int maxBufferedItemCount;
-  private static int preferredPageSize;
+  public static int preferredPageSize;
   private static boolean includeExceptionStackInLog;
   protected static Map<String, CosmosContainer> containerCache;
   private static String userAgent;
